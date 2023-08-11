@@ -13,7 +13,7 @@ import {
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import { FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { UntypedFormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import dayjs, { Dayjs } from 'dayjs/esm';
 import { LocaleConfig } from './daterangepicker.config';
 import { LocaleService } from './locale.service';
@@ -272,7 +272,7 @@ export class DaterangepickerComponent implements OnInit, OnChanges {
   public calendarVariables: CalendarVariableHolder = {};
   // tooltiptext = []; // for storing tooltiptext
   public timepickerVariables: TimePickerVariablesHolder = {};
-  daterangepicker: { start: FormControl; end: FormControl } = { start: new FormControl(), end: new FormControl() };
+  daterangepicker: { start: UntypedFormControl; end: UntypedFormControl } = { start: new UntypedFormControl(), end: new UntypedFormControl() };
 
   public applyBtn: { disabled: boolean } = { disabled: false };
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import dayjs from 'dayjs/esm';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { LocaleConfig } from '../../../../src/daterangepicker';
 
 @Component({
@@ -9,14 +9,14 @@ import { LocaleConfig } from '../../../../src/daterangepicker';
   templateUrl: './reactive-form.component.html'
 })
 export class ReactiveFormComponent {
-  form: FormGroup;
-  form2: FormGroup;
+  form: UntypedFormGroup;
+  form2: UntypedFormGroup;
   locale: LocaleConfig = {
     format: 'YYYY-MM-DDTHH:mm:ss.SSSZ',
     displayFormat: 'YYYY-MM-DD'
   };
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
     this.form = this.fb.group({
       selected: [
         {
@@ -48,7 +48,7 @@ export class ReactiveFormComponent {
     console.log(this.form2.value);
   }
 
-  toggleDisable(form: FormGroup): void {
+  toggleDisable(form: UntypedFormGroup): void {
     if (form.disabled) {
       form.enable();
     } else {
