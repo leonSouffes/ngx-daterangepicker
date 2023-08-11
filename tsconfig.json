@@ -26,7 +26,6 @@
       "useDefineForClassFields": false
     },
     "angularCompilerOptions": {
-        "enableIvy": true,
         "fullTemplateTypeCheck": true,
         "skipTemplateCodegen": true,
         "skipMetadataEmit": false,
