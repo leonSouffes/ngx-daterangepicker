@@ -272,7 +272,10 @@ export class DaterangepickerComponent implements OnInit, OnChanges {
   public calendarVariables: CalendarVariableHolder = {};
   // tooltiptext = []; // for storing tooltiptext
   public timepickerVariables: TimePickerVariablesHolder = {};
-  daterangepicker: { start: UntypedFormControl; end: UntypedFormControl } = { start: new UntypedFormControl(), end: new UntypedFormControl() };
+  daterangepicker: { start: UntypedFormControl; end: UntypedFormControl } = {
+    start: new UntypedFormControl(),
+    end: new UntypedFormControl()
+  };
 
   public applyBtn: { disabled: boolean } = { disabled: false };
 
@@ -1442,7 +1445,7 @@ export class DaterangepickerComponent implements OnInit, OnChanges {
    * @param side left or right
    */
   private getDateWithTime(date, side: SideEnum): dayjs.Dayjs {
-    if(!!this.timepickerVariables[side]) {
+    if (this.timepickerVariables[side]) {
       let hour = parseInt(String(this.timepickerVariables[side].selectedHour), 10);
       if (!this.timePicker24Hour) {
         const ampm = this.timepickerVariables[side].ampmModel;
