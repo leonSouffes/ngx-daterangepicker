@@ -26,6 +26,14 @@ Demo: https://fetrarij.github.io/ngx-daterangepicker-material/
 
 ---
 
+## Fork reason
+
+The base component use the selection as a UTC selection but can't be used to select a date time as a local and retreive a dayjs object with the right utc value.
+
+Now you can use input ```localTimeSelector = true``` to make the date time picker as a local selector instead of UTC (It's the behavior of the <6.* version)
+
+---
+
 ## Installation
 
  Install the plugin from npm:
