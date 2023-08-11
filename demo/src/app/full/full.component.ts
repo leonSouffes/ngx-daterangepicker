@@ -14,6 +14,7 @@ export class FullComponent implements OnInit {
   title = 'Pure angular daterangepicker';
   options = {
     autoApply: false,
+    localTimeSelection: false,
     alwaysShowCalendars: false,
     showCancel: false,
     showClearButton: false,
@@ -40,7 +41,7 @@ export class FullComponent implements OnInit {
   drops: string;
   timePicker: boolean;
   dateLimit: number;
-  selected = { start: dayjs().subtract(3, 'days'), end: dayjs().add(3, 'days') };
+  selected = { start: dayjs('2023-08-07T06:15:00.000Z'), end: dayjs('2023-08-08T11:30:00.000Z') };
 
   constructor() {
     this.timePicker = false;

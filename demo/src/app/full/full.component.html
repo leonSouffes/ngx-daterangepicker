@@ -38,7 +38,9 @@
                 name="daterange"
                 (startDateChanged)="eventClicked($event)"
                 (endDateChanged)="eventClicked($event)"
-                (clearClicked)="eventCleared()" />
+                (clearClicked)="eventCleared()"
+                [localTimeSelector]="options.localTimeSelection"
+            />
         </div>
         <div class="col s6">
             <strong>Value: </strong>{{ selected | json }}
@@ -57,6 +59,11 @@
                     <label>
                         <input type="checkbox" [(ngModel)]="options.autoApply" /><span>autoApply: {{ options.autoApply }}</span>
                     </label>
+                </li>
+                <li>
+                  <label>
+                      <input type="checkbox" [(ngModel)]="options.localTimeSelection" /><span>Local selection: {{ options.localTimeSelection }}</span>
+                  </label>
                 </li>
                 <li>
                     <label

@@ -146,6 +146,14 @@ export class DaterangepickerDirective implements OnInit, OnChanges, DoCheck {
   @Input()
   timePickerSeconds = false;
 
+  /**
+   * Type of user selection utc / timezone
+   * true => the user select the local time
+   * false => the user select the utc mode (default)
+   */
+  @Input()
+  localTimeSelector = false;
+
   @Input() closeOnAutoApply = true;
   @Input()
   private endKeyHolder: string;
@@ -328,6 +336,7 @@ export class DaterangepickerDirective implements OnInit, OnChanges, DoCheck {
     this.picker.opens = this.opens;
     this.localeDiffer = this.differs.find(this.locale).create();
     this.picker.closeOnAutoApply = this.closeOnAutoApply;
+    this.picker.localTimeSelector = this.localTimeSelector;
   }
 
   // eslint-disable-next-line @angular-eslint/no-conflicting-lifecycle
